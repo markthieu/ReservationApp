@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Reservations</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<div class="img" style="background-image: url(images/logo2.jpg);"></div>
+	  				<h3>Reservation App</h3>
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+          </li>
+          <li>
+              <a href="reservations.html"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Reservations</a>
+          </li>
+
+          <li>
+            <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+        <h1>All reservations</h1>
+        <p>
+          This page displays all the reservations.
+          All results are retrieved from the MySQL database.
+        </p>
+        <table border="1">
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Customer Number</th>
+
+          </tr>
+          <tr th:each="person : ${personsList}">
+             <td>[[${person.fullName}]]</td>
+            <td>[[${person.phoneNo}]]</td>
+            <td>[[${person.email}]]</td>
+            <td>[[${person.date}]]</td>
+            <td>[[${person.customerNo}]]</td>
+                </p></form:form>
+         </td>
+          </tr>
+        </table>
+        <h2>Delete reservation</h2>
+          <div>
+            <form action="/delete/" method="delete">
+              Customer Number: <input type="text" name="customerNo" />
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+
+          <h3>Find reservation</h3>
+          <div>
+            <form action="/findIt/" method="get">
+              Customer Number: <input type="text" name="customerNo" />
+              <input type="submit" value="Submit"/>
+             <script type="text/javascript">
+            document.write()
+        </script>
+            </form>
+
+          </div>
+
+		</div>
+
+   <button onclick="/deletall/">Delete all reservations</button> 
+ <h2>Delete all</h2>
+          <div>
+            <form action="/deleteall/" method="delete">
+              Delete?: <input type="text" name="customerNo" />
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Reservation Application</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<div class="img" style="background-image: url(images/logo2.jpg);"></div>
+	  				<h3>Reservation app</h3>
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+          </li>
+          <li>
+              <a href="/reservations.html"><span class="fa fa-reservation mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Reservations</a>
+          </li>
+
+          <li>
+            <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <p>
+          This is an application that is used to manage the resevations of a restaurant.
+        </p>
+
+        <h2>Add reservation</h2>
+        <div>
+          <form action="/registerPerson" method="post">
+            Name: <input type="text" name="fullName" />
+            Phone Number: <input type="text" name="phoneNo" />
+            Email: <input type="text" name="email" />
+            Date: <input type="text" name="date" />
+            <input type="submit" value="Submit"/>
+          </form>
+        </div>
+		</div>
+
+        <div>
+  <nav>
+    <a href="/reservations">View reservations</a><br>
+  </nav>
+  </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
